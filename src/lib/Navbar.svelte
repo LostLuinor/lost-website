@@ -16,36 +16,33 @@
         <span class:isOpen={isOpen}></span>
         <span class:isOpen={isOpen}></span>
         <span class:isOpen={isOpen}></span>
+		<span class:isOpen={isOpen}></span>
     </button>
 
     <!-- Nav Links -->
     <div class="nav-links" class:open={isOpen}>
         <a href="/" class:active={$page.url.pathname === '/'} on:click={() => isOpen = false}>Home</a>
         <a href="/about" class:active={$page.url.pathname === '/about'} on:click={() => isOpen = false}>About</a>
-        <a href="/contact" class:active={$page.url.pathname === '/contact'} on:click={() => isOpen = false}>Contact</a>
+        <a href="/resume" class:active={$page.url.pathname === '/resume'} on:click={() => isOpen = false}>Resume</a>
+		<a href="/projects" class:active={$page.url.pathname === '/projects'} on:click={() => isOpen = false}>Projects</a>
     </div>
 </nav>
 
 <style>
-    :global(body) {
-        margin: 0;
-        background-color: #0d0d0d;
-        color: #e5e5e5;
-        font-family: 'Segoe UI', sans-serif;
-    }
-
     nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 1rem 2rem;
-        background-color: #0f172a;
-        border-bottom: 1px solid #334155;
+        background-color: #0d0d0d;
         position: relative;
+		position: sticky;  
+        top: 0;            
+        z-index: 1000; 
     }
 
     .logo {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
         font-weight: bold;
         color: #0ea5e9;
     }
