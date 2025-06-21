@@ -25,7 +25,7 @@
 		align-items: center;
 		padding: 1rem 2rem;
 		background-color: #0f172a; /* slate-900 */
-		border-bottom: 1px solid #334155; /* border color */
+		border-bottom: 1px solid #e5e5e5; /* border color */
 	}
 
 	.logo {
