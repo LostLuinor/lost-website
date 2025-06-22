@@ -124,18 +124,29 @@
         padding: 2rem;
         border-radius: 12px;
         width: 75%;
-        max-width: 600px;
+        max-width: 70%;
         max-height: 90vh;
         overflow-y: auto;
         box-shadow: 0 8px 32px 0 rgba(14, 165, 233, 0.15);
+        box-sizing: border-box;
     }
-    .modal img  {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: 350px;
-    object-fit: cover;
-}
+    .modal img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 500px;
+        max-height: 50vh;
+        object-fit: cover;
+    }
+
+    /* For small screens */
+    @media (max-width: 600px) {
+        .modal img {
+            width: 100%;
+            max-width: 90vw;
+            max-height: 30vh;
+        }
+    }
     .modal h2 a {
         color: #0ea5e9;
         text-decoration: none;
@@ -159,5 +170,10 @@
     }
     .close:hover {
         background: #475569;
+    }
+    /* For Firefox */
+    .modal {
+        scrollbar-width: thin;
+        scrollbar-color: #334155 #1e293b;
     }
 </style>
