@@ -1,4 +1,4 @@
-#LOST
+# LOST
 lost is my personal website built with SvelteKit, designed to showcase who I am and what I do. It currently includes a home page, a resume, and a projects section. This site is still a work in progress as I continue to refine the design and add more content. Feel free to explore, and check back for updates as it evolves.
 Check out my website: [lost-xxi.vercel.app](https://lost-xxi.vercel.app)
 
