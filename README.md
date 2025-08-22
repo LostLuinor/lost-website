@@ -1,38 +1,52 @@
-# sv
+# LOST - My Personal Website
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+<!-- ![Website Preview](https://via.placeholder.com/800x400?text=LOST+Website+Preview) -->
 
-## Creating a project
+Welcome to **LOST**, my personal website built with [SvelteKit](https://kit.svelte.dev/). This site showcases who I am, my skills, and my projects. It includes a home page, resume, and projects section, with ongoing updates to enhance design and content. Visit it at [lost-xxi.vercel.app](https://lost-xxi.vercel.app) and check back for new features!
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Features
+- **Home Page**: Introduces me and my work.
+- **Resume**: Highlights my skills, experience, and education.
+- **Projects**: Showcases my creative and technical projects.
+- **Work in Progress**: Continually evolving with new content and UI improvements.
 
-```bash
-# create a new project in the current directory
-npx sv create
+## Tech Stack
+- **Framework**: SvelteKit
+- **Deployment**: Vercel
+- **Package Manager**: npm (or pnpm/yarn)
 
-# create a new project in my-app
-npx sv create my-app
-```
+## Getting Started
 
-## Developing
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/LostLuinor/lost-website.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd lost-website
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+   Or open in a browser tab:
+   ```bash
+   npm run dev -- --open
+   ```
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
+### Building for Production
+To create a production build:
 ```bash
 npm run build
 ```
+Preview the build locally:
+```bash
+npm run preview
+```
 
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Thanks for checking out **LOST**!

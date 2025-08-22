@@ -22,7 +22,6 @@
     <!-- Nav Links -->
     <div class="nav-links" class:open={isOpen}>
         <a href="/" class:active={$page.url.pathname === '/'} on:click={() => isOpen = false}>Home</a>
-        <a href="/about" class:active={$page.url.pathname === '/about'} on:click={() => isOpen = false}>About</a>
         <a href="/resume" class:active={$page.url.pathname === '/resume'} on:click={() => isOpen = false}>Resume</a>
 		<a href="/projects" class:active={$page.url.pathname === '/projects'} on:click={() => isOpen = false}>Projects</a>
     </div>
