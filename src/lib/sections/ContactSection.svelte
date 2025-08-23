@@ -6,6 +6,7 @@
 
     function handleSubmit() {
         // Add your form submission logic here
+        alert("LMAO....the button doesn't work");
         console.log('Form submitted:', { name, email, message });
         // You can integrate with a backend service or email service
     }
@@ -13,7 +14,7 @@
 
 <section class="contact-section" id="contact">
     <div class="container">
-        <h2>Contact</h2>
+        <h2>(Contact...)</h2>
         <div class="contact-content">
             <div class="contact-info">
                 <h3>Get in Touch</h3>
@@ -21,20 +22,20 @@
                 
                 <div class="contact-item">
                     <strong>Email:</strong>
-                    <a href="mailto:your.email@example.com">your.email@example.com</a>
+                    <a href="mailto:lishanthansriayyanar@gmail.com">lishanthansriayyanar@gmail.com</a>
                 </div>
                 
                 <div class="contact-item">
                     <strong>GitHub:</strong>
-                    <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
-                        github.com/yourusername
+                    <a href="https://github.com/LostLuinor" target="_blank" rel="noopener noreferrer">
+                        github.com/LostLuinor
                     </a>
                 </div>
                 
                 <div class="contact-item">
                     <strong>LinkedIn:</strong>
-                    <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
-                        linkedin.com/in/yourprofile
+                    <a href="https://www.linkedin.com/in/lishanthan-ayyanar-10475629b/" target="_blank" rel="noopener noreferrer">
+                        linkedin.com/in/lishanthansriayyanar
                     </a>
                 </div>
             </div>
@@ -76,7 +77,7 @@
 
     h2 {
         font-size: 2.5rem;
-        color: #0ea5e9;
+        color: #ffffff;
         margin-bottom: 3rem;
         text-align: center;
     }

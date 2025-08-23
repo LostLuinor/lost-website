@@ -1,6 +1,6 @@
 <script>
-	const githubUrl = "https://github.com/YOUR_USERNAME";
-	const linkedinUrl = "https://linkedin.com/in/YOUR_PROFILE";
+	const githubUrl = "https://github.com/LostLuinor";
+	const linkedinUrl = "https://www.linkedin.com/in/lishanthan-ayyanar-10475629b/";
 </script>
 
 <footer>
