@@ -4,7 +4,10 @@
 
 <section class="main-section">
     <div class="container">
-        <h1>Welcome to LOST</h1>
+        <div class="hero-title">
+            <h1>Welcome to</h1>
+            <img src="/images/LostLogo.png" alt="LOST Logo" />
+        </div>
         <p>Coo coo coolie POWER HOSUE-EH</p>
     </div>
 </section>
@@ -26,10 +29,24 @@
         text-align: center;
     }
 
+    .hero-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
     h1 {
         font-size: 3rem;
         color: #0ea5e9;
-        margin-bottom: 1rem;
+        margin: 0;
+    }
+
+    .hero-title img {
+        height: 3rem;
+        width: auto;
+        object-fit: contain;
     }
 
     p {
@@ -38,9 +55,19 @@
     }
 
     @media (max-width: 768px) {
+        .hero-title {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
         h1 {
             font-size: 2rem;
         }
+        
+        .hero-title img {
+            height: 2rem;
+        }
+        
         p {
             font-size: 1rem;
         }

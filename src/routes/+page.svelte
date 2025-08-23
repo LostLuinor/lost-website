@@ -2,6 +2,7 @@
     import MainSection from '$lib/sections/MainSection.svelte';
     import AboutSection from '$lib/sections/AboutSection.svelte';
     import TimelineSection from '$lib/sections/TimelineSection.svelte';
+    import SkillsSection from '$lib/sections/SkillsSection.svelte';
     import WorksSection from '$lib/sections/WorksSection.svelte';
     import ContactSection from '$lib/sections/ContactSection.svelte';
 </script>
@@ -13,6 +14,8 @@
 <TimelineSection />
 <div class="section-divider"></div>
 <WorksSection />
+<div class="section-divider"></div>
+<SkillsSection />
 <div class="section-divider"></div>
 <ContactSection />
 

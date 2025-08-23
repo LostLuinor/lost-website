@@ -253,6 +253,14 @@
         box-shadow: 0 0 25px rgba(14, 165, 233, 0.4);
     }
 
+    .timeline-content:hover h3 {
+        color: #ffffff;
+    }
+
+    .timeline-content:hover p {
+        color: #ffffff;
+    }
+
 
     
     .timeline-item.left .timeline-content {

@@ -4,7 +4,9 @@
 </script>
 
 <nav>
-    <div class="logo">LOST</div>
+    <div class="logo">
+        <img src="/images/LostLogo2.png" alt="LOST Logo" />
+    </div>
 
     <!-- Hamburger Menu Button (mobile) -->
     <button
@@ -44,6 +46,15 @@
         font-size: 1.4rem;
         font-weight: bold;
         color: #0ea5e9;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 100%;
+        width: auto;
+        object-fit: contain;
     }
 
     .nav-links {

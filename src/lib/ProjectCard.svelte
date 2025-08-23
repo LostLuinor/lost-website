@@ -98,6 +98,7 @@
     height: 200px;
     max-width: 300px;
     object-fit: cover;
+    padding-top: 5px;
 }
     .card h3 {
         margin: 0.75rem;
