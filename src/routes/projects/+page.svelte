@@ -35,9 +35,7 @@
 
 <h1>Projects</h1>
 <div class="project-grid">
-	{#each projects as project}
-		<ProjectCard {...project} />
-	{/each}
+	<h1>idk wht to add in this. give suggestions no</h1>
 </div>
 
 <style>

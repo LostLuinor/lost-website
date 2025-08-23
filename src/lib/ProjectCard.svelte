@@ -1,4 +1,6 @@
 <script>
+    import { browser } from '$app/environment';
+    
     export let title;
     export let description;
     export let fullDescription;
@@ -26,10 +28,12 @@
 
     // Prevent background scroll when modal is open
     $: {
-        if (isOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
+        if (browser) {
+            if (isOpen) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
         }
     }
 </script>
