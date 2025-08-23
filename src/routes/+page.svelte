@@ -7,8 +7,22 @@
 </script>
 
 <MainSection />
+<div class="section-divider"></div>
 <AboutSection />
+<div class="section-divider"></div>
 <TimelineSection />
+<div class="section-divider"></div>
 <WorksSection />
+<div class="section-divider"></div>
 <ContactSection />
+
+<style>
+    .section-divider {
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(to right, transparent, #475569, transparent);
+        margin: 2rem 0;
+        opacity: 0.6;
+    }
+</style>
 

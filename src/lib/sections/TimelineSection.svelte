@@ -4,40 +4,62 @@
     // Add timeline data here
     const timelineItems = [
         {
-            year: "2024",
-            title: "Current Role",
-            description: "Add your current position or project here."
+            year: "",
+            title: "Full Stack Developer Intern @ ArcVision",
+            description: "Working on an energy consumption monitoring platform, building both front-end and back-end systems. Learning the ropes of real-world development while contributing to impactful projects."
         },
         {
-            year: "2023",
-            title: "Previous Experience",
-            description: "Add your previous experience or achievement here."
+            year: "",
+            title: "Crypto Domain Lead @ bi0sblr",
+            description: "Capture The Flag (CTF) enthusiast and active player with team bi0sblr. Leading the crypto domain, solving puzzles, and breaking challenges that test cryptographic thinking."
         },
         {
-            year: "2022",
-            title: "Education/Project",
-            description: "Add educational background or major project here."
+            year: "",
+            title: "Senior Executive @ CodeChef",
+            description: "Guiding peers in competitive programming, hosting sessions, and fostering a coding culture. Sharing problem-solving approaches while learning new tricks along the way."
+        },
+        {
+            year: "",
+            title: "CS + AI Undergraduate",
+            description: "Currently in 5th semester with a CGPA of 8.3. Exploring AI, security, and systems with a hands-on approach to projects and research."
+        },
+        {
+            year: "",
+            title: "Clash Royale Grinder",
+            description: "Because life isn't all code—hit 10k trophies in Clash Royale ⚔️. Strategy, patience, and late-night grind sessions included. (Need to touch grass ig T-T)"
         }
     ];
 
+
     let timelineElement;
     let progressLine;
+    let animatedItems = new Set();
 
     onMount(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-in');
+                    const index = parseInt(entry.target.dataset.index);
+                    animatedItems.add(index);
+                    animatedItems = animatedItems; // Trigger reactivity
                 }
             });
         }, {
             threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
+            rootMargin: '0px 0px -50px 0px'
         });
 
         // Observe timeline items
         const items = timelineElement.querySelectorAll('.timeline-item');
         items.forEach((item) => observer.observe(item));
+
+        // Fallback: Show items after a short delay if intersection observer fails
+        setTimeout(() => {
+            for (let i = 0; i < timelineItems.length; i++) {
+                animatedItems.add(i);
+            }
+            animatedItems = animatedItems; // Trigger reactivity
+        }, 1000);
 
         // Scroll progress animation
         const handleScroll = () => {
@@ -47,22 +69,39 @@
             const windowHeight = window.innerHeight;
             const timelineHeight = timelineElement.offsetHeight;
             
-            // Calculate how much of the timeline is visible
-            const startOffset = rect.top;
-            const endOffset = rect.bottom;
+            // Calculate scroll progress more smoothly
+            const elementTop = rect.top;
+            const elementBottom = rect.bottom;
+            
+            // Start animation when timeline enters viewport
+            const startPoint = windowHeight * 0.8; // Start earlier
+            // End animation when timeline bottom reaches middle of screen
+            const endPoint = windowHeight * 0.5;
             
             let progress = 0;
             
-            if (startOffset <= windowHeight && endOffset >= 0) {
-                if (startOffset <= 0) {
-                    progress = Math.min(1, (windowHeight - Math.max(0, endOffset - windowHeight)) / Math.min(windowHeight, timelineHeight));
+            if (elementBottom > endPoint && elementTop < startPoint) {
+                // Calculate how much of the timeline has been scrolled through
+                if (elementTop <= endPoint) {
+                    // Timeline is fully in view or past it
+                    progress = Math.min(1, (startPoint - elementTop) / (startPoint + timelineHeight - endPoint));
                 } else {
-                    progress = (windowHeight - startOffset) / (windowHeight + timelineHeight);
+                    // Timeline is entering view
+                    progress = (startPoint - elementTop) / (startPoint - endPoint);
                 }
                 progress = Math.max(0, Math.min(1, progress));
+            } else if (elementTop <= endPoint) {
+                // Timeline has scrolled past
+                progress = 1;
             }
             
+            // Apply smooth progress with consistent glow
             progressLine.style.height = `${progress * 100}%`;
+            
+            // Ensure glow effect remains visible
+            if (progress > 0) {
+                progressLine.style.opacity = '1';
+            }
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -77,16 +116,16 @@
 
 <section class="timeline-section" id="timeline">
     <div class="container">
-        <h2>Timeline</h2>
+        <h2>(More...)</h2>
         <div class="timeline" bind:this={timelineElement}>
             <div class="timeline-line">
                 <div class="timeline-progress" bind:this={progressLine}></div>
             </div>
             {#each timelineItems as item, index}
-                <div class="timeline-item {index % 2 === 0 ? 'left' : 'right'}" style="animation-delay: {index * 0.2}s">
+                <div class="timeline-item {index % 2 === 0 ? 'right' : 'left'}">
                     <div class="timeline-dot"></div>
+                    <div class="timeline-year">{item.year}</div>
                     <div class="timeline-content">
-                        <div class="timeline-year">{item.year}</div>
                         <h3>{item.title}</h3>
                         <p>{item.description}</p>
                     </div>
@@ -98,10 +137,9 @@
 
 <style>
     .timeline-section {
-        padding: 4rem 0;
-        background-color: #0d0d0d;
         color: #e5e5e5;
     }
+
 
     .container {
         max-width: 1200px;
@@ -111,7 +149,7 @@
 
     h2 {
         font-size: 2.5rem;
-        color: #0ea5e9;
+        color: #ffffff;
         margin-bottom: 3rem;
         text-align: center;
     }
@@ -128,16 +166,17 @@
         left: 50%;
         top: 0;
         bottom: 0;
-        width: 4px;
-        background: repeating-linear-gradient(
-            to bottom,
-            #334155 0px,
-            #334155 10px,
-            transparent 10px,
-            transparent 20px
-        );
+        width: 2px;
+        background: rgba(14, 165, 233, 0.4);
+        box-shadow: 0 0 15px rgba(14, 165, 233, 0.6);
         transform: translateX(-50%);
     }
+
+.timeline-progress {
+    background: #0ea5e9;
+    box-shadow: 0 0 15px rgba(14, 165, 233, 0.9);
+}
+
 
     .timeline-progress {
         position: absolute;
@@ -145,34 +184,32 @@
         left: 0;
         width: 100%;
         height: 0%;
-        background: repeating-linear-gradient(
-            to bottom,
-            #0ea5e9 0px,
-            #0ea5e9 10px,
-            transparent 10px,
-            transparent 20px
-        );
+        background: #0ea5e9;
         transition: height 0.3s ease-out;
-        box-shadow: 0 0 15px rgba(14, 165, 233, 0.6);
+        box-shadow: 0 0 15px rgba(14, 165, 233, 0.9);
     }
 
     .timeline-item {
         position: relative;
         display: flex;
         margin-bottom: 4rem;
-        opacity: 0;
+        opacity: 1;
         transition: all 0.8s ease-out;
         align-items: center;
     }
 
+    .timeline-item:not(.animate-in) {
+        opacity: 0.7;
+    }
+
     .timeline-item.left {
         justify-content: flex-end;
-        transform: translateX(-100px);
+        transform: translateX(-50px);
     }
 
     .timeline-item.right {
         justify-content: flex-start;
-        transform: translateX(100px);
+        transform: translateX(50px);
     }
 
     .timeline-item.animate-in {
@@ -184,15 +221,13 @@
         position: absolute;
         left: 50%;
         top: 50%;
-        width: 16px;
-        height: 16px;
-        background-color: #0ea5e9;
+        width: 12px;
+        height: 12px;
+        background: #0ea5e9;
         border-radius: 50%;
-        border: 4px solid #0d0d0d;
-        box-shadow: 0 0 0 4px #334155;
-        transition: all 0.4s ease;
-        z-index: 2;
+        box-shadow: 0 0 20px rgba(14, 165, 233, 0.8);
         transform: translate(-50%, -50%);
+        z-index: 2;
     }
 
     .timeline-item.animate-in .timeline-dot {
@@ -202,50 +237,30 @@
     }
 
     .timeline-content {
-        width: 45%;
-        background-color: #1e293b;
-        padding: 2rem;
-        border-radius: 12px;
-        border: 1px solid #334155;
+        background: rgba(30, 41, 59, 0.6); /* transparent look */
+        backdrop-filter: blur(6px); /* frosted glass effect */
+        border: 1px solid rgba(14, 165, 233, 0.2);
+        border-radius: 8px;
+        padding: 1.2rem;
+        width: 35%;
+        color: #e5e5e5;
+        transition: all 0.3s ease;
         position: relative;
-        transition: all 0.4s ease;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     }
 
+    .timeline-content:hover {
+        border-color: rgba(14, 165, 233, 0.6);
+        box-shadow: 0 0 25px rgba(14, 165, 233, 0.4);
+    }
+
+
+    
     .timeline-item.left .timeline-content {
-        margin-right: 2rem;
         text-align: right;
     }
 
     .timeline-item.right .timeline-content {
-        margin-left: 2rem;
         text-align: left;
-    }
-
-    .timeline-item.left .timeline-content::after {
-        content: '';
-        position: absolute;
-        right: -15px;
-        top: 50%;
-        width: 0;
-        height: 0;
-        border-top: 10px solid transparent;
-        border-bottom: 10px solid transparent;
-        border-left: 15px solid #1e293b;
-        transform: translateY(-50%);
-    }
-
-    .timeline-item.right .timeline-content::after {
-        content: '';
-        position: absolute;
-        left: -15px;
-        top: 50%;
-        width: 0;
-        height: 0;
-        border-top: 10px solid transparent;
-        border-bottom: 10px solid transparent;
-        border-right: 15px solid #1e293b;
-        transform: translateY(-50%);
     }
 
     .timeline-item.animate-in .timeline-content {
@@ -255,12 +270,16 @@
     }
 
     .timeline-year {
-        font-size: 1.1rem;
-        font-weight: bold;
+        position: absolute;
+        top: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.9rem;
         color: #0ea5e9;
-        margin-bottom: 0.5rem;
-        opacity: 0.9;
+        font-weight: bold;
+        letter-spacing: 1px;
     }
+
 
     .timeline-content h3 {
         font-size: 1.4rem;

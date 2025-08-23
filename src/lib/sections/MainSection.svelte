@@ -5,8 +5,7 @@
 <section class="main-section">
     <div class="container">
         <h1>Welcome to LOST</h1>
-        <p>This is the main hero section of your website.</p>
-        <!-- Add your main content here -->
+        <p>Coo coo coolie POWER HOSUE-EH</p>
     </div>
 </section>
 
