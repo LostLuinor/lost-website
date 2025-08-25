@@ -30,7 +30,7 @@
 </div>
 
 <a href={pdfLink} class="download-btn" target="_blank" download>
-    Download PDF
+    Don't Click PDF
 </a>
 
 <style>
