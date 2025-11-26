@@ -17,20 +17,18 @@
 </script>
 
 <h1>Resume</h1>
-<p>I still don't have one</p>
-<h2> T-T </h2>
 
 <div class="carousel">
     <img src={pages[currentPage]} alt={`Resume Page ${currentPage + 1}`} />
-    <div class="carousel-controls">
+    <!-- <div class="carousel-controls">
         <button on:click={prevPage}>⟨</button>
         <span>Page {currentPage + 1} of {pages.length}</span>
         <button on:click={nextPage}>⟩</button>
-    </div>
+    </div> -->
 </div>
 
 <a href={pdfLink} class="download-btn" target="_blank" download>
-    Don't Click PDF
+    Don't Click
 </a>
 
 <style>
