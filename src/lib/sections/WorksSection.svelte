@@ -1,6 +1,6 @@
 <script>
     // Import ProjectCard component
-    import ProjectCard from '$lib/ProjectCard.svelte';
+    import ProjectCard from '$lib/components/project/ProjectCard.svelte';
     
     // Add your works/projects data here
     const works = [
