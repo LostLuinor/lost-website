@@ -40,11 +40,11 @@
 </a>
 
 <style>
-	h1 {
-		text-align: center;
-		color: #0ea5e9;
-		margin-bottom: 1.5rem;
-	}
+    h1 {
+        /* text-align: center; */
+        /* color: #0ea5e9; */
+        margin-bottom: 1.5rem;
+    }
 
 	img {
 		width: 100%;
@@ -54,20 +54,22 @@
 		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 	}
 
-	.download-btn {
-		display: block;
-		margin: 2rem auto;
-		background-color: #0ea5e9;
-		color: #fff;
-		padding: 0.75rem 1.5rem;
-		border-radius: 6px;
-		text-decoration: none;
-		transition: background 0.2s;
-	}
+    .download-btn {
+        display: block;
+        margin: 2rem auto;
+        background-color: #0ea5e9;
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        text-decoration: none;
+        transition: background 0.2s;
+        width: 20%;
+        text-align: center;
+    }
 
-	.download-btn:hover {
-		background-color: #0284c7;
-	}
+    .download-btn:hover {
+        background-color: #0284c7;
+    }
 
 	/* Mobile-only carousel */
 	.mobile-carousel {

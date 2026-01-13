@@ -195,11 +195,9 @@ Welcome to our site.\`;</code></pre>
 		padding: 2rem 0;
 	}
 
-	h1 {
-		color: #0ea5e9;
-		margin-bottom: 0.5rem;
-		font-size: 2.5rem;
-	}
+    h1 {
+        margin-bottom: 1.5rem;
+    }
 
 	.subtitle {
 		color: #94a3b8;
