@@ -14,5 +14,5 @@ Welcome to **LOST**, my personal website built with [SvelteKit](https://kit.svel
 - **Deployment**: Vercel
 - **Package Manager**: npm (or pnpm/yarn)
 
-Thanks for checking out **LOST**!
 
+Thanks for checking out **LOST**!
