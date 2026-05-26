@@ -27,6 +27,11 @@
             year: "",
             title: "Clash Royale Grinder",
             description: "Because life isn't all code—hit 10k trophies in Clash Royale ⚔️. Strategy, patience, and late-night grind sessions included. (Need to touch grass ig T-T)"
+        },
+        {
+            year: "",
+            title: "Professional Bottom Fragger",
+            description: "Hardstuck B3 in Valo. Currently mastering the art of missing precise gunplay, getting blinded by my own teammates, and blaming packet loss. We hit those... eventually."
         }
     ];
 
