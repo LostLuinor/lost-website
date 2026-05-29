@@ -5,10 +5,8 @@
     let message = '';
 
     function handleSubmit() {
-        // Add your form submission logic here
         alert("LMAO....the button doesn't work");
         console.log('Form submitted:', { name, email, message });
-        // You can integrate with a backend service or email service
     }
 </script>
 
