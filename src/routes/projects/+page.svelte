@@ -65,12 +65,6 @@
 		</div>
 	</div>
 
-	<div class="projects-footer">
-		<p>
-			Each card opens into a detailed view with the longer description and source repository.
-			The page is designed to stay lightweight while still feeling intentional and polished.
-		</p>
-	</div>
 </section>
 
 <style>

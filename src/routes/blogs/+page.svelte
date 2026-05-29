@@ -21,6 +21,14 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Blogs | LOST</title>
+	<meta
+		name="description"
+		content="IDK.... Insights, tutorials, and thoughts on development and technology from LOST."
+	/>
+</svelte:head>
+
 <div class="blogs-container">
 	<h1>Blog Posts</h1>
 	<p class="subtitle">Thoughts, tutorials, and insights on web development and technology</p>

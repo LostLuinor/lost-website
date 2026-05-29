@@ -15,6 +15,14 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Resume | LOST</title>
+	<meta
+		name="description"
+		content="My professional resume, showcasing my skills and experience."
+	/>
+</svelte:head>
+
 <h1>My Resume</h1>
 
 <!-- Mobile view: carousel -->
