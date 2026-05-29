@@ -24,13 +24,6 @@
             fullDescription: "Arduino-based autonomous vehicle equipped with ultrasonic sensors, camera module, and WiFi connectivity. Features include manual remote control, autonomous navigation, object detection, and real-time video streaming. Built using C++ and integrated with mobile app control.",
             imageUrl: "/images/rccar.png",
             githubUrl: "https://github.com/LostLuinor/smart-rc-car"
-        },
-        {
-            title: "Energy Monitoring Dashboard",
-            description: "IoT-based home energy consumption tracking system",
-            fullDescription: "Full-stack web application for monitoring home energy usage in real-time. Built with React frontend, Node.js backend, and MongoDB database. Features include historical data visualization, cost analysis, and automated alerts for unusual consumption patterns.",
-            imageUrl: "/images/energy.png",
-            githubUrl: "https://github.com/LostLuinor/IoT-Based-Smart-Energy-Monitoring-System"
         }
     ];
 </script>
@@ -50,11 +43,14 @@
             {/each}
         </div>
     </div>
+        <div class="section-end">
+            <!-- <a href="/projects" class="projects-link">Even More...</a> -->
+        </div>
 </section>
 
 <style>
     .works-section {
-        padding: 1 rem 0;
+            padding: 1rem 0 2rem;
             color: #e5e5e5;
     }
 
@@ -76,6 +72,57 @@
         gap: 2rem;
     }
 
+    .section-end {
+        max-width: 1200px;
+        margin: 2.5rem auto 0;
+        padding: 0 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.75rem;
+        text-align: right;
+    }
+
+    .section-end p {
+        margin: 0;
+        color: #94a3b8;
+        font-size: 0.95rem;
+    }
+
+    .projects-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.9rem 1.25rem;
+        border-radius: 999px;
+        border: 1px solid rgba(14, 165, 233, 0.35);
+        background: linear-gradient(135deg, rgba(14, 165, 233, 0.18), rgba(30, 41, 59, 0.9));
+        color: #f8fafc;
+        text-decoration: none;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        box-shadow: 0 10px 30px rgba(2, 6, 23, 0.28);
+        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease,
+            background 0.2s ease;
+    }
+
+    .projects-link::after {
+        content: '→';
+        font-size: 1rem;
+        transition: transform 0.2s ease;
+    }
+
+    .projects-link:hover {
+        transform: translateY(-2px);
+        border-color: rgba(14, 165, 233, 0.7);
+        box-shadow: 0 14px 34px rgba(2, 6, 23, 0.36);
+        background: linear-gradient(135deg, rgba(14, 165, 233, 0.26), rgba(30, 41, 59, 0.96));
+    }
+
+    .projects-link:hover::after {
+        transform: translateX(3px);
+    }
+
     @media (max-width: 768px) {
         .works-section {
             padding: 3rem 0;
@@ -87,6 +134,12 @@
         
         .works-grid {
             grid-template-columns: 1fr;
+        }
+
+        .section-end {
+            padding: 0 2rem;
+            align-items: flex-start;
+            text-align: left;
         }
     }
 </style>
