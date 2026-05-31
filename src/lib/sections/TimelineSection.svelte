@@ -332,60 +332,57 @@
             font-size: 2rem;
         }
         
+        .container { padding: 0 0.6rem; }
+
         .timeline {
-            max-width: 100%;
-            padding: 1rem;
+            max-width: none;
+            width: 100%;
+            margin: 0;
+            padding: 1rem 0.5rem;
         }
         
         .timeline-line {
-            left: 30px;
+            left: 40px; /* move line slightly right on mobile */
             transform: none;
+            width: 3px;
         }
         
         .timeline-item {
-            flex-direction: row;
-            justify-content: flex-start !important;
-            margin-bottom: 3rem;
-            align-items: flex-start;
+            display: block;
+            margin-bottom: 2rem;
+            padding-left: 56px;
         }
-        
+
         .timeline-item.left,
         .timeline-item.right {
-            transform: translateY(50px);
-        }
-        
-        .timeline-item.animate-in {
             transform: translateY(0);
+            justify-content: flex-start;
         }
-        
+
         .timeline-dot {
-            left: 30px;
-            top: 20px;
+            left: 12px; /* dot sits left of the line */
+            top: 18px;
             transform: translateX(-50%);
             position: absolute;
+            width: 14px;
+            height: 14px;
         }
-        
+
         .timeline-content {
-            width: calc(100% - 80px);
-            margin-left: 60px !important;
+            width: calc(100% - 72px);
+            margin-left: 0 !important;
             margin-right: 0 !important;
             text-align: left !important;
+            padding: 0.9rem;
+            border-radius: 8px;
         }
-        
-        .timeline-content::after {
-            display: none;
-        }
-        
-        .timeline-year {
-            font-size: 1rem;
-        }
-        
-        .timeline-content h3 {
-            font-size: 1.2rem;
-        }
-        
-        .timeline-content p {
-            font-size: 0.9rem;
-        }
+
+        .timeline-content::after { display: none; }
+
+        .timeline-year { font-size: 0.95rem; left: 20px; top: -20px; }
+
+        .timeline-content h3 { font-size: 1.15rem; }
+
+        .timeline-content p { font-size: 0.95rem; }
     }
 </style>
