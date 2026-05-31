@@ -3,6 +3,14 @@
 
 	const projects = [
 		{
+			title: 'Deep Learning for Atypical Mitotic Figure Classification',
+			description: 'Binary classification of AMF and NMF patches using class balancing and attention',
+			fullDescription:
+				'End-to-end histopathology pipeline for atypical mitotic figure classification. The project combines curated dataset preparation, 4x AMF augmentation, baseline benchmarking, and attention-based model improvement. DenseNet-121 was selected as the main backbone, and SE attention delivered the strongest overall results in experiments.',
+			imageUrl: '/images/mitoticFigures.png',
+			githubUrl: 'https://github.com/LostLuinor/MitoticFigureClassification'
+		},
+		{
 			title: 'Quantum Maze Solver',
 			description: 'AI-powered maze solving algorithm using quantum computing principles',
 			fullDescription:
