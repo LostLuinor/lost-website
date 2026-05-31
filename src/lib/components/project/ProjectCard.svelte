@@ -75,7 +75,8 @@
         role="dialog"
         aria-modal="true"
         aria-label="Project details modal"
-        on:click={close}
+        tabindex="-1"
+        on:click={(event) => event.target === event.currentTarget && close()}
         on:keydown={handleModalKeydown}
     >
         <div
@@ -83,7 +84,6 @@
             role="document"
             tabindex="-1"
             bind:this={modalRef}
-            on:click|stopPropagation
         >
             <button class="modal-close" on:click={close} aria-label="Close modal">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -166,7 +166,7 @@
     .modal-overlay {
         position: fixed;
         inset: 0;
-        background: linear-gradient(0deg, rgba(2,6,23,0.6), rgba(2,6,23,0.6));
+        background: rgba(2,6,23,0.8);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -177,15 +177,16 @@
     @keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
 
     .modal {
-        background-color: #071028;
-        border: 1px solid rgba(255,255,255,0.03);
-        padding: 1.25rem;
+        background-color: #0b0b0d;
+        border: 1px solid rgba(255,255,255,0.02);
+        padding: 1.5rem 1.75rem;
         border-radius: 12px;
         width: 100%;
-        max-width: 900px;
-        max-height: 90vh;
+        max-width: 960px;
+        max-height: 92vh;
         overflow-y: auto;
-        box-shadow: 0 20px 60px rgba(2,6,23,0.7), 0 8px 32px rgba(14,165,233,0.06);
+        box-shadow: 0 24px 80px rgba(2,6,23,0.75), 0 8px 24px rgba(0,0,0,0.45);
+        position: relative;
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
@@ -193,16 +194,21 @@
 
     .modal-close {
         position: absolute;
-        right: 28px;
-        top: 28px;
+        right: 14px;
+        top: 14px;
         background: transparent;
         border: none;
         color: #cbd5e1;
         cursor: pointer;
-        padding: 6px;
-        border-radius: 6px;
+        padding: 0;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
     }
-    .modal-close:hover { background: rgba(255,255,255,0.02); }
+    .modal-close:hover { background: rgba(255,255,255,0.02); transform: scale(1.05); }
 
     .modal-body {
         display: flex;
@@ -218,8 +224,8 @@
     .modal-content {
         width: 58%;
     }
-    .modal-content h2 { margin: 0 0 0.5rem; color: #7dd3fc; }
-    .modal-content p { color: #e5e7eb; line-height: 1.6; }
+    .modal-content h2 { margin: 0 0 0.5rem; color: #e6e6e6; }
+    .modal-content p { color: #e5e5e5; line-height: 1.6; }
 
     .github-button {
         display: inline-block;
@@ -242,6 +248,8 @@
     @media (max-width: 420px) {
         .card { max-width: 100%; border-radius: 10px; }
         .card-media { height: 180px; }
+        .modal { padding: 1rem; }
+        .modal-close { right: 10px; top: 10px; }
     }
 
     /* For Firefox */
