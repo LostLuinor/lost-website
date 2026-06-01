@@ -15,7 +15,7 @@
 			description: 'Webcam-based student registration, face recognition, and email attendance reporting',
 			fullDescription:
 				'Java desktop application built with OpenCV via JavaCPP for face detection and recognition. The system registers students with 50 training images each, tracks attendance in real time, and exports attendance records to CSV before sending them by email. It includes a simple Swing GUI for registration, attendance capture, and report delivery.',
-			imageUrl: '/images/LostLogo.png',
+			imageUrl: '/images/javaAttendance.webp',
 			githubUrl: 'https://github.com/LostLuinor/Java-Attendance-System'
 		},
 		{
