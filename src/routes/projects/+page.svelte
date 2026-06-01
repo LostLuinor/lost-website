@@ -16,7 +16,15 @@
 			fullDescription:
 				'Java desktop application built with OpenCV via JavaCPP for face detection and recognition. The system registers students with 50 training images each, tracks attendance in real time, and exports attendance records to CSV before sending them by email. It includes a simple Swing GUI for registration, attendance capture, and report delivery.',
 			imageUrl: '/images/javaAttendance.webp',
-			githubUrl: 'https://github.com/LostLuinor/Java-Attendance-System'
+			githubUrl: 'https://github.com/LostLuinor/Java-Based-Attendance-System'
+		},
+		{
+			title: 'File Manager in C',
+			description: 'Command-line file manager with file operations, filtering, sorting, and encryption tools',
+			fullDescription:
+				'Linux-based C command-line file manager for common file and directory operations. It supports viewing, deleting, renaming, copying, moving, sorting, filtering with regular expressions, encrypting and decrypting text files, hiding files in images, and generating a terminal-based workflow with colored output.',
+			imageUrl: '/images/CFileManager.png',
+			githubUrl: 'https://github.com/LostLuinor/File-Manager-C'
 		},
 		{
 			title: 'Quantum Maze Solver',
