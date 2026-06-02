@@ -44,7 +44,7 @@
         </div>
     </div>
         <div class="section-end">
-            <!-- <a href="/projects" class="projects-link">Even More...</a> -->
+            <a href="/projects" class="projects-link">Even More...</a>
         </div>
 </section>
 
