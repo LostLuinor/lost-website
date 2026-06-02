@@ -11,6 +11,14 @@
 			githubUrl: 'https://github.com/LostLuinor/MitoticFigureClassification'
 		},
 		{
+			title: 'Sandboxed Script Analyzer',
+			description: 'Docker sandbox for safely running Python scripts with telemetry and behavioral fingerprints',
+			fullDescription:
+				'Lightweight tooling for executing untrusted Python scripts inside a hardened Docker sandbox. It captures strace telemetry, snapshots filesystem changes, and converts runtime behavior into compact fingerprints for triage or LLM-assisted analysis. An optional local LLM can generate concise or detailed incident reports.',
+			imageUrl: '/images/NLPAnalyzer.png',
+			githubUrl: 'https://github.com/LostLuinor/Sandboxed-Script-Analyzer-with-LLM-Threat-Reporting'
+		},
+		{
 			title: 'Java-Based Attendance System',
 			description: 'Webcam-based student registration, face recognition, and email attendance reporting',
 			fullDescription:
